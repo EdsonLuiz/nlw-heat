@@ -1,8 +1,25 @@
 import 'dotenv/config'
 import express, { response } from 'express'
+import http from 'http'
+import cors from 'cors'
+import {Server, Socket} from 'socket.io'
 import { router } from './routes'
 
 const app = express()
+app.use(cors())
+
+const serverHttp = http.createServer(app)
+const io = new Server(serverHttp, {
+  cors: {
+    origin: '*'
+  }
+})
+
+io.on('connection', socket => {
+  console.log(`Usuário conectado no socket ${socket.id}` );
+  
+})
+
 app.use(express.json())
 app.use(router)
 
@@ -15,4 +32,4 @@ app.get('/signin/callback', (req, res) => {
   res.json(code)
 })
 
-app.listen(4000, () => console.log(`🦄 unicorn is running`))
+export {serverHttp, io}
