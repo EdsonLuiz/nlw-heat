@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import { CreateMessageService } from "../services/create-message-service";
 import { GetLastThreeMessagesService } from "../services/get_last_three_messages";
 
 class GetLastThreeMessagesController {
