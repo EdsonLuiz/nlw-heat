@@ -1,6 +1,12 @@
 import {extendTheme, theme as base} from '@chakra-ui/react'
 
 export const theme = extendTheme({
+  colors: {
+    brandButton: {
+      200: '#ffcd1e',
+      300: '#f6e05e'
+    }
+  },
   fonts: {
     heading: `Roboto, ${base.fonts.heading}`,
     body: `Roboto, ${base.fonts.body}`
