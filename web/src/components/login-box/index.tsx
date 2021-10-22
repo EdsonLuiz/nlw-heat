@@ -1,5 +1,4 @@
-import { Button, Text } from "@chakra-ui/react";
-import {VStack, StackProps} from '@chakra-ui/layout'
+import { Button, Text, VStack, StackProps } from "@chakra-ui/react";
 import {motion} from 'framer-motion'
 import {VscGithubInverted} from 'react-icons/vsc'
 
@@ -32,7 +31,7 @@ export function LoginBox() {
       <Text as="strong" textAlign="center" fontSize="3xl" fontWeight="700" lineHeight="xl">
         Entre e compartilhe sua mensagem
       </Text>
-      <Button colorScheme="brandButton" size="lg" 
+      <Button colorScheme="yellow" size="lg" 
               leftIcon={<VscGithubInverted size={24} />}>
       Entrar com Github
       </Button>
